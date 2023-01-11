@@ -97,4 +97,6 @@ const ApiMobile = axios.create({
   };
 
 
-  
+  export default{
+    Apimobile : Apimobile
+  }
