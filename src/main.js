@@ -4,7 +4,7 @@ import router from './router'
 // import scss from './scss'
 import store from './store'
 import './assets/css/style.css'
-// import './assets/css/style.scss'
+import './assets/css/style.scss'
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 
 import 'bootstrap/dist/css/bootstrap.css'

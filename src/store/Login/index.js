@@ -1,4 +1,4 @@
-import { ApiGetRequest, ApiPostRequest } from '@/utils/Api';
+import { ApiGetRequestMobile, ApiPostRequestMobile } from '@/utils/Api';
 import { Message } from 'element-ui';
 
 const state = {
@@ -16,7 +16,7 @@ const mutations = {
 
 const actions = {
   async searchSchool({ commit }, payload) {
-    const result = await ApiGetRequest(`school?q=${escape(payload)}`);
+    const result = await ApiGetRequestMobile(`school?q=${escape(payload)}`);
     if (result.error) {
       Message({
         type: 'error',
@@ -36,7 +36,7 @@ const actions = {
   async submitLogin({ commit, state }) {
     const { data } = state;
 
-    const result = await ApiPostRequest(`school/check`, {
+    const result = await ApiPostRequestMobile(`school/check`, {
       school_id: data.selectSchool.id,
       nis_nik: data.nik,
     });
@@ -48,7 +48,7 @@ const actions = {
       });
     } else {
       const dataResult = result.data.data;
-      const loginResult = await ApiPostRequest(`school/login`, {
+      const loginResult = await ApiPostRequestMobile(`school/login`, {
         uuid: dataResult.id,
         password: data.pwd,
       });
